@@ -19,7 +19,7 @@ yellow_pages=[
                  address: "118 Walker St, North Sydney, NSW 2060"
                  }
                ]
-def choice
+def choice_first
     puts "What do you want to do?"
     p "1. View Entries"
     p "2. Add Entries"
@@ -29,12 +29,12 @@ def choice
     return choice_number
 end
 
-choice number=choice
+choice_number= choice_first
 i=0
 
 while choice_number<1 || choice_number>3
     puts "Invalid Choice. Please choose again"
-    choice_number=choice
+    choice_number= choice_first
     i+=1
     if i>=3
         puts"Too many wrong entries. Please try again later."
@@ -49,11 +49,11 @@ if choice_number==1
 
 end
 if choice_number==2
+    puts "What is the name?"
+    name=gets.chomp
+    puts "What is the number?"
+    number= gets.chomp
 
 
 end
 
-puts "What is the name?"
-name=gets.chomp
-puts "What is the number?"
-number= gets.chomp
