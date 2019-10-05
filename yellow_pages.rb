@@ -1,3 +1,32 @@
+### Challenge 3 - Medium (long!)
+### Yellow Pages Terminal Edition
+# This is the standard phonebook example but with extra stuff!
+# Let users view, add, or remove entries in a phone book.
+# - view should just show all entries
+# - add should provide prompts for each property of the entry eg.
+# what is the name? ___
+# what is the number? ___
+# - remove should ask for a name, and if that name is in the phone book then ask the user to confirm the removal. Only remove the entry once the user confirms that they want to remove it!
+#
+# These phonebook entries should contain a lot of information about a person, like a really old-fashioned phone book!
+# eg. a person's name, phone number, workplace, address
+# They should also be able to view the phone book's entire collection of entries in a nicely formatted message.
+# eg.
+# ---------------------------------------
+# Alex Holder +6100000000
+# Educator at Coder Academy
+# 118 Walker St, North Sydney, NSW 2060
+# ---------------------------------------
+# Ubisoft Australia +6100000001
+# Videogame sales & support
+# 14 Mountain St, Ultimo, NSW 2007
+# ---------------------------------------
+# Saad Saaed +6100000002
+# Academic & Partnerships Director at Coder Academy
+# 118 Walker St, North Sydney, NSW 2060
+# ---------------------------------------
+#
+# Hint: You can combine arrays & hashes!
 
 yellow_pages=[
 
@@ -19,6 +48,7 @@ yellow_pages=[
                  address: "118 Walker St, North Sydney, NSW 2060"
                  }
                ]
+
 def choice_first
     puts "What do you want to do?"
     p "1. View Entries"
@@ -31,6 +61,7 @@ end
 
 choice_number= choice_first
 i=0
+x=0
 
 while choice_number<1 || choice_number>3
     puts "Invalid Choice. Please choose again"
@@ -45,18 +76,29 @@ while choice_number<1 || choice_number>3
 end
 
 if choice_number==1
-    p yellow_pages
+    while x==0
+        for item in yellow_pages
+            print item[:name] + " " 
+            p item[:tel]
+            p item[:role]
+            p item[:address]
+        end
+        break
+    end
 
 end
+
 if choice_number==2
     puts "What is the name?"
     name=gets.chomp
     puts "What is the number?"
     number= gets.chomp
-yellow_pages.push({name:"#{name}"
+    yellow_pages.push({name:"#{name}",
                     tel: number})
+    
 
 end
+
 if choice_number==3 
     while x == 0
         puts "Please enter the name whose entry you want to delete:"
@@ -79,7 +121,10 @@ if choice_number==3
 
             end
     end
+    
 
 
 end
+
+
 
