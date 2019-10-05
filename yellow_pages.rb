@@ -53,6 +53,32 @@ if choice_number==2
     name=gets.chomp
     puts "What is the number?"
     number= gets.chomp
+yellow_pages.push({name:"#{name}"
+                    tel: number})
+
+end
+if choice_number==3 
+    while x == 0
+        puts "Please enter the name whose entry you want to delete:"
+        name=(gets.chomp).downcase
+
+            for i in yellow_pages
+                if name == i[:name].downcase
+                    puts "Please confirm to delete the entry for #{i[:name]}? Please type 'yes' to confirm deletion or type 'no' to cancel"
+                    answer=(gets.chomp).downcase
+                    if answer=="yes"
+                        yellow_pages.delete(i)
+                        x+=1
+                        break
+                    end
+                else
+                    puts "Please enter correct name."
+                    
+
+                end
+
+            end
+    end
 
 
 end
