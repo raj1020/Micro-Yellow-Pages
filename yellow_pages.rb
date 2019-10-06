@@ -125,7 +125,7 @@ if choice_number==3
                         break
                     end
                 else
-                    puts "Incorrect name."
+                    puts " name."
                     
 
                 end
