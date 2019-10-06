@@ -28,6 +28,10 @@
 #
 # Hint: You can combine arrays & hashes!
 
+#Solution starts below:
+
+#Hash for the database
+
 yellow_pages=[
 
                  {name: "Alex Holder",
@@ -49,6 +53,7 @@ yellow_pages=[
                  }
                ]
 
+# Method for providing choice to users
 def choice_first
     puts "What do you want to do?"
     p "1. View Entries"
@@ -63,6 +68,7 @@ choice_number= choice_first
 i=0
 x=0
 
+#Response if user makes invalid choice
 while choice_number<1 || choice_number>3
     puts "Invalid Choice. Please choose again"
     choice_number= choice_first
@@ -75,6 +81,7 @@ while choice_number<1 || choice_number>3
 
 end
 
+#For viewing the entries
 if choice_number==1
     while x==0
         for item in yellow_pages
@@ -82,12 +89,15 @@ if choice_number==1
             p item[:tel]
             p item[:role]
             p item[:address]
+            
+            
         end
         break
     end
 
 end
 
+# For making addition to the list
 if choice_number==2
     puts "What is the name?"
     name=gets.chomp
@@ -99,6 +109,7 @@ if choice_number==2
 
 end
 
+# For removing the entries
 if choice_number==3 
     while x == 0
         puts "Please enter the name whose entry you want to delete:"
@@ -114,7 +125,7 @@ if choice_number==3
                         break
                     end
                 else
-                    puts "Please enter correct name."
+                    puts "Incorrect name."
                     
 
                 end
